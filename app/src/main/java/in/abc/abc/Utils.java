@@ -33,6 +33,8 @@ import java.util.Map;
 public class Utils {
     private static final String TAG = "Utils";
 
+    static JSONObject jobj = new JSONObject();
+
     static String digitalClockTime(int timeInMilliSeconds) {
         int totalSeconds = timeInMilliSeconds/1000;
         int hours = totalSeconds / (60 * 60);
@@ -159,8 +161,8 @@ public class Utils {
     **/
     public static Pair<String, String> getSampleOtpAndPlaybackInfo(RequestQueue queue1) throws IOException, JSONException {
         String serverUrl = "https://dev.vdocipher.com/api/videos/123e4398b73baf3c1d98bcb7597ba480/otp";
-        final JSONObject[] jobj = new JSONObject[1];
-        jobj[0] = null;
+
+        jobj = null;
         String otp = null;
         String playbackInfo = null;
 
@@ -170,7 +172,7 @@ public class Utils {
                 Log.d("TAG", "response = "+ response);
                 String response1 = response.toString();
                 try {
-                    jobj[0] = new JSONObject(response1);
+                    jobj = new JSONObject(response1);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -195,11 +197,11 @@ public class Utils {
                 }
             };
             queue1.add(request);
-            while(jobj[0] == null ){
+            while(jobj == null ){
 
                             }
-        otp = jobj[0].getString("otp");
-        playbackInfo = jobj[0].getString("playbackInfo");
+        otp = jobj.getString("otp");
+        playbackInfo = jobj.getString("playbackInfo");
         return Pair.create(otp, playbackInfo);
         //return Pair.create("20160313versASE323FfcHC51cFc9f7wWlmn5KQ245bBvthmJakmmFWAyCWeachH", "eyJ2aWRlb0lkIjoiNGNmM2Q0M2Y4YWNiOGI4ZGI3NDhhOGNmZDY3MTE5MjQifQ==");
     }

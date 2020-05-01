@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_courses:
                     mTextMessage.setText(R.string.title_courses);
-                    Intent intent = new Intent(MainActivity.this, PlayerActivity.class);
+                    Intent intent = new Intent(MainActivity.this, CourseContent.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_help:

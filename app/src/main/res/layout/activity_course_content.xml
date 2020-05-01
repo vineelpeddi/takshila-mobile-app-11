@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CourseContent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/llcontent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <Button
+        android:id="@+id/button_videos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Videos"
+        android:onClick="handleChangeFragment"
+        android:layout_marginRight="50dp"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <Button
+        android:id="@+id/button_materials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Materials"
+        android:onClick="handleChangeFragment"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="39dp" />
+    </LinearLayout>
+
+
+       <FrameLayout
+           android:id="@+id/fragment_content"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:name="in.abc.abc.VideoContentFragment"
+           app:layout_constraintTop_toBottomOf="@+id/llcontent"
+
+           ></FrameLayout>
+
+        
+        
+  <!--  <FrameLayout
+        android:id="@+id/fragment_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+
+         />
+         -->
+
+</android.support.constraint.ConstraintLayout>

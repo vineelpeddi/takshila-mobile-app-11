@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="PlayerActivity"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <fragment
+            class ="com.vdocipher.aegis.player.VdoPlayerFragment"
+            android:id="@+id/vdo_player_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:keepScreenOn="true"/>
+        <in.abc.abc.VdoPlayerControlView
+            android:id="@+id/player_control_view"
+            android:layout_alignTop="@id/vdo_player_fragment"
+            android:layout_alignBottom="@id/vdo_player_fragment"
+            android:layout_alignLeft="@id/vdo_player_fragment"
+            android:layout_alignRight="@id/vdo_player_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#D3D3D3"
+        >
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/doubt"
+            android:background ="#D3D3D3"
+            android:paddingLeft="10dp"
+            android:textSize="20dp"
+            android:text="Have a doubt at this point in the video?
+                          Ask your teacher.">
+        </android.support.v7.widget.AppCompatTextView>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/whatsapp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/whatsapp"
+
+            ></android.support.v7.widget.AppCompatImageView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D3D3D3"
+            android:gravity="center"
+            android:text="FAQs on the topic:"
+            android:textSize="25dp">
+        </android.support.v7.widget.AppCompatTextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+
+            android:background="@color/black_transparent">
+
+        </TextView>
+
+    </LinearLayout>
+</LinearLayout>

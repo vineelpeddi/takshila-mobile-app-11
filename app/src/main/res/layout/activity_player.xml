@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:keepScreenOn="true"/>
-        <in.abc.abc.VdoPlayerControlView
+        <in.TakshilaLearning.TakshilaLearning.VdoPlayerControlView
             android:id="@+id/player_control_view"
             android:layout_alignTop="@id/vdo_player_fragment"
             android:layout_alignBottom="@id/vdo_player_fragment"

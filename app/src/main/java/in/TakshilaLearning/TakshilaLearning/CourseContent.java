@@ -1,4 +1,4 @@
-package in.abc.abc;
+package in.TakshilaLearning.TakshilaLearning;
 
 
 
@@ -9,8 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 
 import org.json.JSONArray;
 import org.json.JSONException;

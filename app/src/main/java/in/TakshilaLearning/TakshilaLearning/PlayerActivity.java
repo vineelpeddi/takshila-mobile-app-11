@@ -1,21 +1,16 @@
-package in.abc.abc;
+package in.TakshilaLearning.TakshilaLearning;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -31,8 +26,6 @@ import com.vdocipher.aegis.player.VdoPlayerFragment;
 import org.json.JSONException;
 
 import java.io.IOException;
-
-import static com.loopj.android.http.AsyncHttpClient.log;
 
 public class PlayerActivity extends AppCompatActivity implements VdoPlayer.InitializationListener {
 

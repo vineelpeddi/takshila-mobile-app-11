@@ -1,9 +1,10 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "in.abc.abc"
+        applicationId "in.TakshilaLearning.TakshilaLearning"
         minSdkVersion 18
         targetSdkVersion 27
         versionCode 1
@@ -30,12 +31,15 @@ dependencies {
     implementation 'com.android.support:support-vector-drawable:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.vdocipher.aegis:vdocipher-android:1.0.0-alpha11'
     implementation 'com.android.volley:volley:+'
-    implementation 'com.android.support:recyclerview-v7:23.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 
 
 }

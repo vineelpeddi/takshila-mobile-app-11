@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.abc.abc">
+    package="in.TakshilaLearning.TakshilaLearning">
 
     <application
         android:allowBackup="true"
@@ -9,16 +9,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CourseContent"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="in.TakshilaLearning.TakshilaLearning.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <data android:scheme="https"
+                    android:host="www.dev.takshi.la"/>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+
+
+
+            </intent-filter>
+
+        </activity>
+        <activity android:name="in.TakshilaLearning.TakshilaLearning.CourseContent" />
+        <activity android:name="in.TakshilaLearning.TakshilaLearning.MainActivity">
+
+
         </activity>
         <activity
-            android:name=".PlayerActivity"
+            android:name="in.TakshilaLearning.TakshilaLearning.PlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name" />
     </application>

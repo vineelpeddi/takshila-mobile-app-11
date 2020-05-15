@@ -1,7 +1,6 @@
-package in.abc.abc;
+package in.TakshilaLearning.TakshilaLearning;
 
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-import com.google.android.exoplayer2.C;
-import com.vdocipher.aegis.player.VdoPlayer;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,7 +27,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class VideoContentFragment extends Fragment {

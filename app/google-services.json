@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "356148560381",
+    "firebase_url": "https://takshila-e6ebf.firebaseio.com",
+    "project_id": "takshila-e6ebf",
+    "storage_bucket": "takshila-e6ebf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356148560381:android:d5b2f4c7af2e9d1908d994",
+        "android_client_info": {
+          "package_name": "in.TakshilaLearning.TakshilaLearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356148560381-i92hrk7g73an1c27ru4g8ke52698d6a9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.TakshilaLearning.TakshilaLearning",
+            "certificate_hash": "04eb871cc121d32b6c8913a00c6d645e75cbe546"
+          }
+        },
+        {
+          "client_id": "356148560381-qnn762365snrvcmgdkvm0sdqp2abol14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnkrivjVRIbZ3GFhjiMpebLh9dn-SG4lc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356148560381-qnn762365snrvcmgdkvm0sdqp2abol14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

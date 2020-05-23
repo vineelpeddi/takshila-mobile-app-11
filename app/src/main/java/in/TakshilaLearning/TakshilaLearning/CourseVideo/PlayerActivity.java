@@ -1,5 +1,6 @@
-package in.TakshilaLearning.TakshilaLearning;
+package in.TakshilaLearning.TakshilaLearning.CourseVideo;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -27,10 +28,12 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
+import in.TakshilaLearning.TakshilaLearning.R;
+
 public class PlayerActivity extends AppCompatActivity implements VdoPlayer.InitializationListener {
 
 
-    private static final String TAG = "PlayerActivity";
+    private static final String TAG = "abc";
     public static final String EXTRA_VDO_PARAMS = "vdo_params";
 
     private VdoPlayerFragment playerFragment;
@@ -41,6 +44,7 @@ public class PlayerActivity extends AppCompatActivity implements VdoPlayer.Initi
     private int currentOrientation;
     private VdoPlayer.VdoInitParams vdoParams;
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

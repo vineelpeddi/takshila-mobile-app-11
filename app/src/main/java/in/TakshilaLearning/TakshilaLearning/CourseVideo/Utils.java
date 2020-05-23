@@ -1,4 +1,4 @@
-package in.TakshilaLearning.TakshilaLearning;
+package in.TakshilaLearning.TakshilaLearning.CourseVideo;
 
 import android.util.Log;
 import android.util.Pair;
@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Utils {
-    private static final String TAG = "Utils";
+    private static final String TAG = "in.TakshilaLearning.TakshilaLearning.Course.Utils";
 
     static JSONObject jobj = new JSONObject();
 

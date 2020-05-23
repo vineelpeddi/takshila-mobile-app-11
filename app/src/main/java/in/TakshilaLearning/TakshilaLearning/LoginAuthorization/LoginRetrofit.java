@@ -1,4 +1,4 @@
-package in.TakshilaLearning.TakshilaLearning;
+package in.TakshilaLearning.TakshilaLearning.LoginAuthorization;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -10,7 +10,8 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface LoginRetrofit {
-    @GET("wp-json/wplms/v1/user/profile")
+
+    @GET("/oauth/me")
     Call<ResponseBody> getInfo(
             @Header("Authorization") String authToken);
 

@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContent;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;

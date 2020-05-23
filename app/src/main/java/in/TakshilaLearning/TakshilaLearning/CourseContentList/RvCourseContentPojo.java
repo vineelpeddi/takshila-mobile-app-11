@@ -1,4 +1,4 @@
-package in.TakshilaLearning.TakshilaLearning;
+package in.TakshilaLearning.TakshilaLearning.CourseContentList;
 
 import java.util.ArrayList;
 

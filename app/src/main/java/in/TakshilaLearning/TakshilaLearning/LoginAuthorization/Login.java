@@ -1,4 +1,4 @@
-package in.TakshilaLearning.TakshilaLearning;
+package in.TakshilaLearning.TakshilaLearning.LoginAuthorization;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
+import in.TakshilaLearning.TakshilaLearning.MainActivity;
+import in.TakshilaLearning.TakshilaLearning.R;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -45,18 +47,24 @@ public class Login extends AppCompatActivity {
         btn_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e(TAG, "1233 = " + token);
+                Intent intent = new Intent(Login.this, MainActivity.class);
+                startActivity(intent);
+                /*
+
+                Log.e(TAG, "1233 =" + token);
                 Retrofit.Builder builder = new Retrofit.Builder()
-                        .baseUrl("http://dev.takshi.la/")
+                        .baseUrl("http://dev123.takshi.la")
                         .addConverterFactory(GsonConverterFactory.create());
                 Retrofit retrofit = builder.build();
                 LoginRetrofit client = retrofit.create(LoginRetrofit.class);
                 Call<ResponseBody> call =  client.getInfo(
-                       token
+                        token
                 );
                 call.enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        Log.e(TAG, "1233 = " + response);
+
                         if(response.isSuccessful()) {
                             try {
                                 Toast.makeText(Login.this, response.body().string(), Toast.LENGTH_SHORT).show();
@@ -77,7 +85,7 @@ public class Login extends AppCompatActivity {
 
                     }
                 });
-
+*/
             }
         });
         }
@@ -110,8 +118,12 @@ public class Login extends AppCompatActivity {
                     Log.e(TAG, "123456789 = " + response);
                     token = response.body().getAccessToken();
                     String type = response.body().getTokenType();
+                    String expires = response.body().getExpiresIn();
+                    String scope = response.body().getScope();
                     Log.e(TAG, "1234 = " + token);
                     Log.e(TAG, "1234 = " + type);
+                    Log.e(TAG, "1234 = " + expires);
+                    Log.e(TAG, "1234 = " + scope);
 
 
                 }

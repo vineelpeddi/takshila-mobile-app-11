@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="in.TakshilaLearning.TakshilaLearning.Login">
+        <activity android:name="in.TakshilaLearning.TakshilaLearning.LoginAuthorization.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,13 +28,13 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="in.TakshilaLearning.TakshilaLearning.CourseContent" />
+        <activity android:name="in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContent" />
         <activity android:name="in.TakshilaLearning.TakshilaLearning.MainActivity">
 
 
         </activity>
         <activity
-            android:name="in.TakshilaLearning.TakshilaLearning.PlayerActivity"
+            android:name="in.TakshilaLearning.TakshilaLearning.CourseVideo.PlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name" />
     </application>

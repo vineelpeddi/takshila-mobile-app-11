@@ -1,5 +1,4 @@
-package in.TakshilaLearning.TakshilaLearning;
-
+package in.TakshilaLearning.TakshilaLearning.CourseVideo;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -25,6 +24,8 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import in.TakshilaLearning.TakshilaLearning.R;
+
 /**
  * A view for controlling playback via a VdoPlayer.
  */
@@ -46,7 +47,7 @@ public class VdoPlayerControlView extends FrameLayout {
         boolean onFullscreenAction(boolean enterFullscreen);
     }
 
-    private static final String TAG = "VdoPlayerControlView";
+    private static final String TAG = "in.TakshilaLearning.TakshilaLearning.Course.VdoPlayerControlView";
 
     public static final int DEFAULT_FAST_FORWARD_MS = 10000;
     public static final int DEFAULT_REWIND_MS = 10000;
@@ -210,7 +211,7 @@ public class VdoPlayerControlView extends FrameLayout {
     }
 
     /**
-     * Call to know the visibility of the playback controls ui. VdoPlayerControlView itself doesn't
+     * Call to know the visibility of the playback controls ui. in.TakshilaLearning.TakshilaLearning.Course.VdoPlayerControlView itself doesn't
      * change visibility when hiding ui controls.
      * @return true if playback controls are visible
      */

@@ -1,4 +1,4 @@
-package in.TakshilaLearning.TakshilaLearning;
+package in.TakshilaLearning.TakshilaLearning.CourseContentList;
 
 
 
@@ -23,6 +23,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import in.TakshilaLearning.TakshilaLearning.R;
 
 public class CourseContent extends AppCompatActivity {
     private static final String TAG = "CActivity" ;

@@ -1,4 +1,4 @@
-package in.TakshilaLearning.TakshilaLearning;
+package in.TakshilaLearning.TakshilaLearning.CourseContentList;
 
 
 import android.app.Fragment;
@@ -28,6 +28,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import in.TakshilaLearning.TakshilaLearning.R;
 
 public class VideoContentFragment extends Fragment {
     private static final String TAG = "abc";

@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button btn_login = (Button)findViewById(R.id.btn_login);
+        Button btn_login = (Button)findViewById(R.id.btn_logininfo);
         Button btn_info = (Button)findViewById(R.id.btn_info);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +93,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        /*
         Uri uri = getIntent().getData();
         if(uri != null){
 
@@ -136,5 +137,7 @@ public class Login extends AppCompatActivity {
 
 
         }
+
+         */
     }
 }

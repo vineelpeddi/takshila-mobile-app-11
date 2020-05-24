@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,10 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContent;
+import in.TakshilaLearning.TakshilaLearning.LoginAuthorization.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView mTextMessage;
+    Fragment selectedFragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -26,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_search:
-                    mTextMessage.setText(R.string.title_search);
+
                     return true;
                 case R.id.navigation_courses:
-                    mTextMessage.setText(R.string.title_courses);
+
                     Intent intent = new Intent(MainActivity.this, CourseContent.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_help:
-                    mTextMessage.setText(R.string.title_help);
+
                     return true;
             }
             return false;
@@ -61,10 +62,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+
         //navigation bar
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Fragment selectedFragment = new LoginFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
+
 
     }
 

@@ -12,12 +12,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:id="@+id/btn_login"></Button>
+            android:text="Login via Authorization flow"
+            android:id="@+id/btn_logininfo"></Button>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Once login is complete"
+            android:text="Login via user credentials"
             android:id="@+id/btn_info"></Button>
 
     </LinearLayout>

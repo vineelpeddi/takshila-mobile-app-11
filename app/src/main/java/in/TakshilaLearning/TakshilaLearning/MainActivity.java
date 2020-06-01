@@ -11,11 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContent;
-import in.TakshilaLearning.TakshilaLearning.LoginAuthorization.LoginFragment;
+import in.TakshilaLearning.TakshilaLearning.LoginAuthorization.LoginSignUpFragment;
+import in.TakshilaLearning.TakshilaLearning.SearchCoursesList.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
     Fragment selectedFragment;
@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_search:
+                    selectedFragment = new SearchFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
 
                     return true;
                 case R.id.navigation_courses:
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         //navigation bar
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Fragment selectedFragment = new LoginFragment();
+        Fragment selectedFragment = new LoginSignUpFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
 
 

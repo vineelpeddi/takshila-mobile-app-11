@@ -34,11 +34,9 @@ import static com.android.volley.VolleyLog.TAG;
 
 public class CoursesForSaleFragment extends Fragment {
     String token;
-    TextView tv_courses_for_sale;
     RecyclerView rv_courses_list;
-    static int count;
-    String Courses;
-    static ArrayList<RvCourseForSaleContentPojo> CourseForSaleListData ;
+
+    ArrayList<RvCourseForSaleContentPojo> CourseForSaleListData = new ArrayList<>() ;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //just change the fragment_dashboard
         //with the fragment you want to inflate
@@ -79,54 +77,42 @@ public class CoursesForSaleFragment extends Fragment {
 
                 if(response.isSuccessful()) {
                     try {
-                        Courses = response.body().string();
+                        String Courses = response.body().string();
+
                         CourseForSaleListData = new ArrayList<>();
 
+                        JSONArray jsonArray = new JSONArray(Courses);
 
-                        JSONArray jsonArray = new JSONArray(response);
-                        JSONObject json = jsonArray.getJSONObject(0);
-                        JSONObject data = json.getJSONObject("data");
-                        JSONObject instructor = data.getJSONObject("instructor");
-                        JSONObject description = instructor.getJSONObject("description");
-                        JSONObject price = description.getJSONObject("price");
-                        JSONObject demoUrl = price.getJSONObject("demoUrl");
-                        JSONObject material = demoUrl.getJSONObject("material");
+                        for (int k = 0; k<jsonArray.length(); k++){
 
-                        String instructor_name  = instructor.getString("name");
-                        String description_name = description.getString("name");
-                        String price_name = price.getString("name");
-                        String demoUrl_name = demoUrl.getString("name");
-                        String material_name = material.getString("name");
+                        JSONObject json     = jsonArray.getJSONObject(k);
+                        JSONObject id       = json.getJSONObject("id");
+                        JSONObject name     = json.getJSONObject("name");
+                        JSONObject description = json.getJSONObject("description");
+                        JSONObject price    = json.getJSONObject("price");
 
-                        JSONArray curriculumArray = data.getJSONArray("curriculum");
-                        // Log.e(TAG, "tv_view = " + instructor_name);
-                        int ex = 0;
-                        count = 0;
-                        for (int j = 0; j < curriculumArray.length(); j++) {
+                        String id_name          = id.getString("id");
+                        String name_name        = name.getString("name");
+                        String description_name = description.getString("description");
+                        String price_name       = price.getString("price");
 
-                            JSONObject ingredObject = curriculumArray.getJSONObject(j);
-                            String ingType = ingredObject.getString("type");
-                            String ingCourse = ingredObject.getString("course");
-                            //Log.e(TAG, "tv_view = " + ingType);
-                            if (ex == 1 && ingType.equals("unit")) {
-                                count = count + 1;
-                                // Log.e(TAG, "ex = " + ingTitle);
-                                RvCourseForSaleContentPojo obj = new RvCourseForSaleContentPojo();
-                                obj.setInstructor(instructor_name);
-                                obj.setDescription(description_name);
-                                obj.setPrice(price_name);
-                                obj.setDemoUrl(demoUrl_name);
-                                obj.setMaterial(material_name);
-                                CourseForSaleListData.add(obj);
-                                // Log.e(TAG, "tv_view = " + CourseContentListData);
 
-                            }
+                        RvCourseForSaleContentPojo obj = new RvCourseForSaleContentPojo();
 
-                            Log.e(TAG, "1233 = " + response.body().string());
-                        }
+
+                                   obj.setId(id_name);
+                                   obj.setName(name_name);
+                                   obj.setDescription(description_name);
+                                   obj.setPrice(price_name);
+
+                                   CourseForSaleListData.add(obj);
+                               }
+
+                                Log.e(TAG, "1233 = " + response.body().string());
+
                     }catch(IOException | JSONException e){
                             e.printStackTrace();
-                        }
+                    }
 
 
 

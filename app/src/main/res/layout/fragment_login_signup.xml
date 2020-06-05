@@ -1,29 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_login_view_your_courses"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="192dp"
+        android:background="@android:color/holo_blue_light"
         android:text="Log in to view your courses"
-        android:id="@+id/btn_login_view_your_courses"/>
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_look_for_courses"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="260dp"
+        android:background="@android:color/white"
         android:text="Look for courses to add"
-        android:id="@+id/btn_look_for_courses"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_noaccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign up"
-        android:id="@+id/btn_singn_up"/>
+        android:layout_width="240dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="340dp"
+        android:text="Don't have a Takshila account?"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_singn_up"
+        android:textColor="@android:color/black"
+        android:textSize="17sp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="340dp"
+        android:text="Sign up here"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

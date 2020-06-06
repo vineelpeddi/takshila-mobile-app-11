@@ -137,7 +137,7 @@ public class VideoContentFragment extends Fragment {
             br.close();
 
             String response = responseBuffer.toString();
-            //Log.i(TAG, "response: " + response);
+            Log.i(TAG, "response: " + response);
             CourseContentListData = new ArrayList<>();
 
 

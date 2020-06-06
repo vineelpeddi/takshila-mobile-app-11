@@ -8,12 +8,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import in.TakshilaLearning.TakshilaLearning.R;
 
 public class CoursesForSaleListAdapter extends RecyclerView.Adapter<CoursesForSaleListAdapter.CoursesViewHolder>{
-    private String [] data;
-    public CoursesForSaleListAdapter(String [] data ){
-        this.data = data;
+    ArrayList<String> edata ;
+    public CoursesForSaleListAdapter( ArrayList data ){
+        edata = data;
     }
 
 
@@ -26,14 +28,15 @@ public class CoursesForSaleListAdapter extends RecyclerView.Adapter<CoursesForSa
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CoursesViewHolder holder, int position) {
-        String title = data[position];
-        holder.tv_course_name.setText(title);
+    public void onBindViewHolder(@NonNull CoursesViewHolder holder, int position ) {
+
+        holder.tv_course_name.setText(edata.get(position));
+
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return  edata.size();
     }
 
     public class CoursesViewHolder extends RecyclerView.ViewHolder{

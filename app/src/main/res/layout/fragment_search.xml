@@ -1,40 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <EditText
-        android:layout_width="match_parent"
+        android:id="@+id/et_search_for_courses"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
-
-        android:id="@+id/et_search_for_courses"></EditText>
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="56dp"
+        android:hint="search for courses"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></EditText>
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/btn_search"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="108dp"
         android:text="search"
-        android:id="@+id/btn_search"></Button>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_school_courses"
+        android:layout_width="340dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="240dp"
         android:text="school courses"
-        android:id="@+id/btn_school_courses"></Button>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="entrance exam"
-        android:id="@+id/btn_entrance_exam"></Button>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="professional couses"
-        android:id="@+id/btn_professional_courses"></Button>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="skill courses"
-        android:id="@+id/btn_skill_courses"></Button>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btn_entrance_exam"
+        android:layout_width="340dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="304dp"
+        android:text="entrance exam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
+        android:id="@+id/btn_professional_courses"
+        android:layout_width="340dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="368dp"
+        android:text="professional couses"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
+        android:id="@+id/btn_skill_courses"
+        android:layout_width="340dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="432dp"
+        android:text="skill courses"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <TextView
+        android:id="@+id/btn_categories"
+        android:layout_width="15dp"
+        android:layout_height="274dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="240dp"
+        android:background="@android:color/white"
+        android:textColor="@android:color/black"
+        android:text="CATEGORIES"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

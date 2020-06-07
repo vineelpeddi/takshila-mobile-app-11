@@ -18,10 +18,7 @@ import in.TakshilaLearning.TakshilaLearning.R;
 public class RvCourseContentListAdapter extends RecyclerView.Adapter<RvCourseContentListAdapter.ViewHolder> {
     private ArrayList<RvCourseContentPojo> CourseContentList = new ArrayList<>();
     private final LayoutInflater inflator;
-
     private static Context context;
-
-
 
     // RecyclerView recyclerView;
     public RvCourseContentListAdapter(Context context) {
@@ -47,7 +44,6 @@ public class RvCourseContentListAdapter extends RecyclerView.Adapter<RvCourseCon
     public void setListContent(ArrayList<RvCourseContentPojo> list_members){
         this.CourseContentList = list_members;
         notifyItemRangeChanged(0,list_members.size());
-
     }
 
     @Override

@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContent;
+import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContentFragment;
 import in.TakshilaLearning.TakshilaLearning.LoginAuthorization.LoginSignUpFragment;
 import in.TakshilaLearning.TakshilaLearning.SearchCoursesList.SearchFragment;
 
@@ -32,9 +33,11 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.navigation_courses:
+                    selectedFragment = new CourseContentFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
 
-                    Intent intent = new Intent(MainActivity.this, CourseContent.class);
-                    startActivity(intent);
+                 //   Intent intent = new Intent(MainActivity.this, CourseContent.class);
+                  //  startActivity(intent);
                     return true;
                 case R.id.navigation_help:
 
@@ -72,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
 
 
+    }
+
+    public void changeFragment(Fragment selectedFragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
     }
 
 }

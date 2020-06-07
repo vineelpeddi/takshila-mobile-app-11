@@ -47,12 +47,6 @@ public class VideoContentFragment extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //just change the fragment_dashboard
-        //with the fragment you want to inflate
-        //like if the class is HomeFragment it should have R.layout.home_fragment
-        //if it is DashboardFragment it should have R.layout.fragment_dashboard
-
-
         view = inflater.inflate(R.layout.fragment_video_content, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         Bundle bundle = this.getArguments();
@@ -90,7 +84,6 @@ public class VideoContentFragment extends Fragment {
                 }
                 Log.i(TAG, "response: " + CourseContentListData);
                 adapter.setListContent(CourseContentListData);
-
                 recyclerView.setAdapter(adapter);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 recyclerView.setLayoutManager(layoutManager);
@@ -109,7 +102,7 @@ public class VideoContentFragment extends Fragment {
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tv_view = (TextView)view.findViewById(R.id.tv_video);
+
 
     }
 

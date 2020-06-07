@@ -8,8 +8,8 @@ public class RvCourseForSaleContentPojo {
     private String name;
     private String description;
     private String price;
-    private String demoUrl;
-    private String material;
+//    private String demoUrl;
+    private String teacher;
 
     private ArrayList<RvCourseForSaleContentPojo> SalePojo =new ArrayList<>();
     public RvCourseForSaleContentPojo() {
@@ -30,7 +30,9 @@ public class RvCourseForSaleContentPojo {
     }
     public void setPrice(String price) { this.price = price; }
 
-    public String getDemoUrl() { return demoUrl; }
-    public String getMaterial() { return  material; }
-
+  //  public String getDemoUrl() { return demoUrl; }
+    public String getTeacher() { return  teacher; }
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
 }

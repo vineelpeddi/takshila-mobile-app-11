@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import java.io.IOException;
 
+import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContentFragment;
 import in.TakshilaLearning.TakshilaLearning.CoursesForSale.CoursesForSaleFragment;
 import in.TakshilaLearning.TakshilaLearning.LoginAuthorization.model.AccessToken;
 import in.TakshilaLearning.TakshilaLearning.R;
@@ -87,7 +88,7 @@ public class LoginFragment extends Fragment {
                 bundle.putString("access_token",token);
                 singleTonExample singletonexample = singleTonExample.getInstance();
                 singletonexample.setText(token);
-                Fragment selectedFragment = new CoursesForSaleFragment();
+                Fragment selectedFragment = new CourseContentFragment();
                 selectedFragment.setArguments(bundle);
                 getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
 

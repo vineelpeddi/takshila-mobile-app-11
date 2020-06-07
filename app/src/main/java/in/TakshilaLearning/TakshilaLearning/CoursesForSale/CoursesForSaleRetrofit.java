@@ -9,4 +9,7 @@ public interface CoursesForSaleRetrofit {
     @GET("/wp-json/wc/v3/products")
     Call<ResponseBody> getInfo(
             @Query("access_token") String authToken);
+
+    @GET("wp-json/wc/v3/product")
+    Call<ResponseBody> getMockInfo();
 }

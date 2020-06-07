@@ -35,30 +35,67 @@ import static com.android.volley.VolleyLog.TAG;
 public class CoursesForSaleFragment extends Fragment {
     String token;
     RecyclerView rv_courses_list;
+    ArrayList<RvCourseForSaleContentPojo> CourseForSaleListData;
+    static CoursesForSaleListAdapter adapter;
 
-    ArrayList<RvCourseForSaleContentPojo> CourseForSaleListData = new ArrayList<>() ;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //just change the fragment_dashboard
-        //with the fragment you want to inflate
-        //like if the class is HomeFragment it should have R.layout.home_fragment
-        //if it is DashboardFragment it should have R.layout.fragment_dashboard
         View inflate =  inflater.inflate(R.layout.fragment_courses_for_sale, container,false);
+
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             token = bundle.getString("access_token"); // Key, default value
         }
-        rv_courses_list = (RecyclerView) inflate.findViewById(R.id.rv_courses_list_);
-        rv_courses_list.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rv_courses_list.setAdapter(new CoursesForSaleListAdapter(CourseForSaleListData));
         return inflate;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getCourseinfo(token);
+      //  getCourseinfo(token);
+        rv_courses_list = (RecyclerView)view.findViewById(R.id.rv_courses_for_sale_list);
+        adapter = new CoursesForSaleListAdapter(getActivity());
+        getMockCourseInfo();
+
 
     }
+
+    private void getMockCourseInfo() {
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("http://www.amock.io/api/maitreyi/")
+                .addConverterFactory(GsonConverterFactory.create());
+        Retrofit retrofit = builder.build();
+        CoursesForSaleRetrofit client = retrofit.create(CoursesForSaleRetrofit.class);
+        Call<ResponseBody> call =  client.getMockInfo();
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+               if(response.isSuccessful()){
+                   try {
+                       String Courses = response.body().string();
+                       GetCourseForSaleList(Courses);
+                       Log.e(TAG, "xyz " + CourseForSaleListData);
+                       adapter.setListContent(CourseForSaleListData);
+
+                       rv_courses_list.setAdapter(adapter);
+                       RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+                       rv_courses_list.setLayoutManager(layoutManager);
+
+                   }catch(IOException | JSONException e){
+                       e.printStackTrace();
+                   }
+
+               }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+
+    }
+
     private void getCourseinfo(String token){
         Log.e(TAG, "1233 =" + token);
         Retrofit.Builder builder = new Retrofit.Builder()
@@ -74,48 +111,15 @@ public class CoursesForSaleFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 Log.e(TAG, "1233 = " + response);
-
                 if(response.isSuccessful()) {
                     try {
                         String Courses = response.body().string();
+                        GetCourseForSaleList(Courses);
 
-                        CourseForSaleListData = new ArrayList<>();
-
-                        JSONArray jsonArray = new JSONArray(Courses);
-
-                        for (int k = 0; k<jsonArray.length(); k++){
-
-                        JSONObject json     = jsonArray.getJSONObject(k);
-                        JSONObject id       = json.getJSONObject("id");
-                        JSONObject name     = json.getJSONObject("name");
-                        JSONObject description = json.getJSONObject("description");
-                        JSONObject price    = json.getJSONObject("price");
-
-                        String id_name          = id.getString("id");
-                        String name_name        = name.getString("name");
-                        String description_name = description.getString("description");
-                        String price_name       = price.getString("price");
-
-
-                        RvCourseForSaleContentPojo obj = new RvCourseForSaleContentPojo();
-
-
-                                   obj.setId(id_name);
-                                   obj.setName(name_name);
-                                   obj.setDescription(description_name);
-                                   obj.setPrice(price_name);
-
-                                   CourseForSaleListData.add(obj);
-                               }
-
-                                Log.e(TAG, "1233 = " + response.body().string());
 
                     }catch(IOException | JSONException e){
                             e.printStackTrace();
                     }
-
-
-
                 }
                 else{
                     Log.e(TAG, "1233 = " + "no");
@@ -128,6 +132,32 @@ public class CoursesForSaleFragment extends Fragment {
 
             }
         });
+
+    }
+
+   public void GetCourseForSaleList(String Courses) throws JSONException {
+       CourseForSaleListData = new ArrayList<>();
+       JSONArray jsonArray = new JSONArray(Courses);
+       for (int k = 0; k<jsonArray.length(); k++){
+           JSONObject json     = jsonArray.getJSONObject(k);
+           String id_name          = json.getString("id");
+           String name_name        = json.getString("name");
+           String description_name = json.getString("short_description");
+           String price_name       = json.getString("price");
+           String teacher_name       = json.getString("teacher");
+
+           RvCourseForSaleContentPojo obj = new RvCourseForSaleContentPojo();
+
+           obj.setId(id_name);
+           obj.setName(name_name);
+           obj.setDescription(description_name);
+           obj.setPrice(price_name);
+           obj.setTeacher(teacher_name);
+
+           CourseForSaleListData.add(obj);
+
+       }
+
 
     }
 }

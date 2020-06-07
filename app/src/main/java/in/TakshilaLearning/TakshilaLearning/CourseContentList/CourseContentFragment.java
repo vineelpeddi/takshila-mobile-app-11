@@ -39,7 +39,7 @@ public class CourseContentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_course_content, container,false);
         btn_video = (Button)v.findViewById(R.id.btn_videos);
-        btn_material = (Button)v.findViewById(R.id.btn_material);
+        btn_material = (Button)v.findViewById(R.id.btn_materials);
         return v;
     }
 
@@ -51,6 +51,17 @@ public class CourseContentFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 getVideoContent();
+
+            }
+        });
+
+        btn_material.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment childfragmentVideo = new MaterialContentFragment();
+                FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_content_info, childfragmentVideo);
+                transaction.commit();
 
             }
         });

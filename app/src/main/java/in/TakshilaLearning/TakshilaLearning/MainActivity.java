@@ -1,6 +1,5 @@
 package in.TakshilaLearning.TakshilaLearning;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContent;
 import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContentFragment;
 import in.TakshilaLearning.TakshilaLearning.LoginAuthorization.LoginSignUpFragment;
 import in.TakshilaLearning.TakshilaLearning.SearchCoursesList.SearchFragment;

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import in.TakshilaLearning.TakshilaLearning.CoursesForSale.PurchaseFragment;
 import in.TakshilaLearning.TakshilaLearning.R;
 
 import static com.android.volley.VolleyLog.TAG;
@@ -96,6 +97,19 @@ public class CourseDetailsFragment extends Fragment {
 
                 FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_child, childfragmentMaterial);
+                transaction.commit();
+
+            }
+        });
+
+        btn_purchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragmentPurchase = new PurchaseFragment();
+
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_main_container, fragmentPurchase);
                 transaction.commit();
 
             }

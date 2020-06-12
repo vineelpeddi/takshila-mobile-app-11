@@ -13,11 +13,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import in.TakshilaLearning.TakshilaLearning.CourseContentList.CourseContentFragment;
+import in.TakshilaLearning.TakshilaLearning.CourseContentList.MyCoursesFragment;
 import in.TakshilaLearning.TakshilaLearning.LoginAuthorization.LoginSignUpFragment;
 import in.TakshilaLearning.TakshilaLearning.SearchCoursesList.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
-    Fragment selectedFragment;
+    SearchFragment selectedFragment;
+    MyCoursesFragment selectedFragment1;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.navigation_courses:
-                    selectedFragment = new CourseContentFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
+                    selectedFragment1 = new MyCoursesFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment1).commit();
 
                  //   Intent intent = new Intent(MainActivity.this, CourseContent.class);
                   //  startActivity(intent);

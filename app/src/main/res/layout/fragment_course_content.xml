@@ -19,8 +19,7 @@
             android:layout_height="wrap_content"
             android:text="Videos"
 
-            android:layout_marginRight="50dp"
-            />
+            android:layout_marginRight="50dp" />
 
         <Button
             android:id="@+id/btn_materials"

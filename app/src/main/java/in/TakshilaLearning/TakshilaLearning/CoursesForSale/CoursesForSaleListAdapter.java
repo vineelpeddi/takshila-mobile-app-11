@@ -10,20 +10,31 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import in.TakshilaLearning.TakshilaLearning.CoursesForSale.CourseDetails.CourseDetailsFragment;
+import in.TakshilaLearning.TakshilaLearning.CoursesForSale.Cart;
+import in.TakshilaLearning.TakshilaLearning.MainActivity;
 import in.TakshilaLearning.TakshilaLearning.R;
 
+
+import static android.widget.Toast.makeText;
 import static com.android.volley.VolleyLog.TAG;
+import static in.TakshilaLearning.TakshilaLearning.CoursesForSale.Cart.cartProducts;
+
 
 public class CoursesForSaleListAdapter extends RecyclerView.Adapter<CoursesForSaleListAdapter.CoursesViewHolder>{
     private ArrayList<RvCourseForSaleContentPojo> edata = new ArrayList<>();
     private static Context context;
     private final LayoutInflater inflator;
+    RvCourseForSaleContentPojo myListDat1 = new RvCourseForSaleContentPojo();
+    String message = "successfully added item to cart" ;
+
 
 
     public CoursesForSaleListAdapter(Context context) {
@@ -61,6 +72,16 @@ public class CoursesForSaleListAdapter extends RecyclerView.Adapter<CoursesForSa
                 Log.e(TAG, "p " + position);
                 myFragment.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container, myFragment).addToBackStack(null).commit();
+            }
+        });
+        holder.btn_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                   Cart c1 = new Cart();
+                        c1.addingToCartList(myListDat1);
+                System.out.println(message);
+                System.out.println(c1.getCartSize());
+                System.out.println(cartProducts);
             }
         });
 

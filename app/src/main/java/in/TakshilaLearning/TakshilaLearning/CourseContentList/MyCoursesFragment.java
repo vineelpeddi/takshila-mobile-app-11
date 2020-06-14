@@ -26,16 +26,25 @@ public class MyCoursesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Button btn_add_more_courses = (Button)view.findViewById(R.id.btn_add_more_courses);
-        Button btn_search_your_courses = (Button)view.findViewById(R.id.btn_search_your_courses);
+        Button btn_banking = (Button)view.findViewById(R.id.btn_banking);
 
 
 
 
-        btn_search_your_courses.setOnClickListener(new View.OnClickListener() {
+        btn_banking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Fragment selectedFragment = new CourseContentFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).addToBackStack(null).commit();
+            }
+        });
+
+        btn_add_more_courses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment selectedFragment = new CoursesForSaleFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).addToBackStack(null).commit();
+
             }
         });
 

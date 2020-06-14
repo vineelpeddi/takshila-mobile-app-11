@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_search:
                     selectedFragment = new SearchFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).addToBackStack(null).commit();
 
                     return true;
                 case R.id.navigation_courses:
                     selectedFragment1 = new MyCoursesFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment1).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment1).addToBackStack(null).commit();
 
                  //   Intent intent = new Intent(MainActivity.this, CourseContent.class);
                   //  startActivity(intent);

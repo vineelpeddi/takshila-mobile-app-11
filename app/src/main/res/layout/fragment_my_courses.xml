@@ -8,12 +8,12 @@
 
 
     <Button
-        android:id="@+id/btn_social_studies"
+        android:id="@+id/btn_banking"
         android:layout_width="322dp"
         android:layout_height="75dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="148dp"
-        android:text="GRADE 6 SOCIAL STUDIES"
+        android:text="Banking"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

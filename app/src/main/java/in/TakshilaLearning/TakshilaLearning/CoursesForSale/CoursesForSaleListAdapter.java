@@ -10,22 +10,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import in.TakshilaLearning.TakshilaLearning.CoursesForSale.CartList.Cart;
 import in.TakshilaLearning.TakshilaLearning.CoursesForSale.CourseDetails.CourseDetailsFragment;
-import in.TakshilaLearning.TakshilaLearning.CoursesForSale.Cart;
-import in.TakshilaLearning.TakshilaLearning.MainActivity;
 import in.TakshilaLearning.TakshilaLearning.R;
 
 
 import static android.widget.Toast.makeText;
 import static com.android.volley.VolleyLog.TAG;
-import static in.TakshilaLearning.TakshilaLearning.CoursesForSale.Cart.cartProducts;
 
 
 public class CoursesForSaleListAdapter extends RecyclerView.Adapter<CoursesForSaleListAdapter.CoursesViewHolder>{
@@ -48,13 +45,14 @@ public class CoursesForSaleListAdapter extends RecyclerView.Adapter<CoursesForSa
     public CoursesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.list_courses_for_sale_layout, parent, false);
+        View view = inflater.inflate(R.layout.rv_list_courses_for_sale_layout, parent, false);
         return new CoursesViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CoursesViewHolder holder, int position ) {
         RvCourseForSaleContentPojo myListData = edata.get(position);
+
         holder.tv_course_name.setText(myListData.getName());
         holder.btn_about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,11 +75,11 @@ public class CoursesForSaleListAdapter extends RecyclerView.Adapter<CoursesForSa
         holder.btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                   Cart c1 = new Cart();
-                        c1.addingToCartList(myListDat1);
+
+                String result = Cart.addingToCartList(myListData);
                 System.out.println(message);
-                System.out.println(c1.getCartSize());
-                System.out.println(cartProducts);
+                Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
+
             }
         });
 

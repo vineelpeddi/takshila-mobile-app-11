@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import in.TakshilaLearning.TakshilaLearning.CoursesForSale.PurchaseFragment;
+import in.TakshilaLearning.TakshilaLearning.CoursesForSale.CartList.Cart;
+import in.TakshilaLearning.TakshilaLearning.CoursesForSale.CartList.PurchaseFragment;
+import in.TakshilaLearning.TakshilaLearning.CoursesForSale.RvCourseForSaleContentPojo;
 import in.TakshilaLearning.TakshilaLearning.R;
 
 import static com.android.volley.VolleyLog.TAG;
@@ -23,6 +25,7 @@ public class CourseDetailsFragment extends Fragment {
     Button btn_teacher_info;
     Button btn_material;
     Button btn_purchase;
+    RvCourseForSaleContentPojo Coursedetailobj;
 
 
     @Nullable
@@ -37,6 +40,12 @@ public class CourseDetailsFragment extends Fragment {
             teacher = bundle.getString("teacher");
             price = bundle.getString("price");
         }
+        Coursedetailobj = new RvCourseForSaleContentPojo();
+        Coursedetailobj.setId(id);
+        Coursedetailobj.setName(name);
+        Coursedetailobj.setDescription(description);
+        Coursedetailobj.setPrice(price);
+        Coursedetailobj.setTeacher(teacher);
         Log.e(TAG, "n " + name);
         Log.e(TAG, "t " + teacher);
         Log.e(TAG, "p " + price);
@@ -105,12 +114,11 @@ public class CourseDetailsFragment extends Fragment {
         btn_purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment fragmentPurchase = new PurchaseFragment();
 
+                Cart.addingToCartList(Coursedetailobj);
+                Fragment selectedFragment = new PurchaseFragment();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).addToBackStack(null).commit();
 
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_main_container, fragmentPurchase);
-                transaction.commit();
 
             }
         });

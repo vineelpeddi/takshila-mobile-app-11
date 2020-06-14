@@ -75,7 +75,6 @@ public class CoursesForSaleFragment extends Fragment {
                        GetCourseForSaleList(Courses);
                        Log.e(TAG, "xyz " + CourseForSaleListData);
                        adapter.setListContent(CourseForSaleListData);
-
                        rv_courses_list.setAdapter(adapter);
                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
                        rv_courses_list.setLayoutManager(layoutManager);
@@ -144,7 +143,7 @@ public class CoursesForSaleFragment extends Fragment {
            String name_name        = json.getString("name");
            String description_name = json.getString("short_description");
            String price_name       = json.getString("price");
-           String teacher_name       = json.getString("teacher");
+           String teacher_name     = json.getString("teacher");
 
            RvCourseForSaleContentPojo obj = new RvCourseForSaleContentPojo();
 

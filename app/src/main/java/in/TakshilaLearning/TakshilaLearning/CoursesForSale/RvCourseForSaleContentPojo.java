@@ -3,7 +3,7 @@ package in.TakshilaLearning.TakshilaLearning.CoursesForSale;
 import java.util.ArrayList;
 
 
-public class RvCourseForSaleContentPojo {
+public class RvCourseForSaleContentPojo{
     private String id;
     private String name;
     private String description;

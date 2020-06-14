@@ -29,7 +29,7 @@ public class LoginSignUpFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment selectedFragment = new LoginFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).addToBackStack(null).commit();
             }
         });
 
@@ -37,7 +37,7 @@ public class LoginSignUpFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment selectedFragment = new CoursesForSaleFragment();
-                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_main_container,selectedFragment).addToBackStack(null).commit();
             }
         });
     }
